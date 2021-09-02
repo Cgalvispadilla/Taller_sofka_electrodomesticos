@@ -32,7 +32,7 @@ public class Televisor extends Electrodomesticos{
         if (getNumeroPulgadas() > 40){
             precioAcumulado += precioAcumulado * 0.30;
         }
-        if (getTieneTDT().equals("si")){
+        if (getTieneTDT().equalsIgnoreCase("si")){
             precioAcumulado += 250000;
         }
 
