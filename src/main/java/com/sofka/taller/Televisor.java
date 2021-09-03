@@ -26,6 +26,7 @@ public class Televisor extends Electrodomesticos{
         this.tieneTDT = tieneTDT;
     }
 
+    // prueba
     @Override
     public double calcularCostoTotal() {
         double precioAcumulado = super.calcularCostoTotal();
