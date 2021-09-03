@@ -8,6 +8,7 @@ public class Nevera extends Electrodomesticos {
         this.capacidad = capacidad;
     }
 
+
     public int getCapacidad() {
         return capacidad;
     }

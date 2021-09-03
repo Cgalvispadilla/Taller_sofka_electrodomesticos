@@ -10,7 +10,7 @@ public class Facturacion {
         Electrodomesticos elec;
         Televisor tel;
         Nevera nevera;
-        String comuso, procedencia, sintonizador;
+        String consumo, procedencia, sintonizador;
         int capacidad, nPulgadas;
         int seleccion;
         do {
@@ -22,40 +22,41 @@ public class Facturacion {
             switch (seleccion) {
                 case 1:
                     System.out.println("Ingrese el consumo del electrodomestico");
-                    comuso = scanner.nextLine();
+                    consumo = scanner.next();
                     System.out.println("Ingrese la procedencia del electrodomestico");
-                    procedencia = scanner.nextLine();
-                    elec = new Electrodomesticos(comuso, procedencia);
+                    procedencia = scanner.next();
+                    elec = new Electrodomesticos(consumo, procedencia);
                     electrodomesticos.add(elec);
                     break;
                 case 2:
                     System.out.println("Ingrese el consumo del electrodomestico");
-                    comuso = scanner.nextLine();
+                    consumo = scanner.next();
                     System.out.println("Ingrese la procedencia del televisor");
-                    procedencia = scanner.nextLine();
+                    procedencia = scanner.next();
                     System.out.println("ingrese el numero de pulgadas del televisor");
                     nPulgadas = scanner.nextInt();
                     System.out.println("Ingrese <<si> o <<no>> tiene sintonizador el televisor");
-                    sintonizador = scanner.nextLine();
-                    tel = new Televisor(comuso, procedencia, nPulgadas, sintonizador);
+                    sintonizador = scanner.next();
+                    tel = new Televisor(consumo, procedencia, nPulgadas, sintonizador);
+                    electrodomesticos.add(tel);
                     break;
                 case 3:
                     System.out.println("Ingrese el consumo de la nevera");
-                    comuso = scanner.nextLine();
+                    consumo = scanner.next();
                     System.out.println("Ingrese la procedencia de la nevera");
-                    procedencia = scanner.nextLine();
+                    procedencia = scanner.next();
                     System.out.println("Ingrese la capacidad que tiene la nevera");
                     capacidad = scanner.nextInt();
-                    nevera = new Nevera(comuso, procedencia, capacidad);
+                    nevera = new Nevera(consumo, procedencia, capacidad);
                     electrodomesticos.add(nevera);
                     break;
                 case 4:
                     double totalCosto = 0;
                     if (electrodomesticos.size() > 0) {
-                        for (Electrodomesticos e : electrodomesticos) {
-                            totalCosto += e.calcularCostoTotal();
+                        for (Electrodomesticos e: electrodomesticos) {
+                            totalCosto+=e.calcularCostoTotal();
                         }
-                        System.out.printf("el costo total de los electrodomesticos es: %d", totalCosto);
+                        System.out.println("el costo total de los electrodomesticos es: "+ totalCosto);
                     } else {
                         System.out.println("no hay electrodomesticos aún");
                     }
